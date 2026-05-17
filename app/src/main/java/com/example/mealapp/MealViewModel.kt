@@ -39,4 +39,16 @@ class MealViewModel : ViewModel() {
             }
         }
     }
+
+    fun searchByCategory(category: String) {
+        viewModelScope.launch {
+            try {
+                val result = RetrofitInstance.api.getMealsByCategory(category)
+                _meals.value = result.drinks ?: emptyList()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                _meals.value = emptyList()
+            }
+        }
+    }
 }

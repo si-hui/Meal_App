@@ -11,6 +11,9 @@ interface MealApi {
 
     @GET("lookup.php")
     suspend fun getMealById(@Query("i") id: String): MealResponse
+
+    @GET("filter.php")
+    suspend fun getMealsByCategory(@Query("c") category: String): MealResponse
 }
 
 object RetrofitInstance {
