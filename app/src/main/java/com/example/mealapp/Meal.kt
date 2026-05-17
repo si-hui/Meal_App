@@ -5,7 +5,8 @@ data class Meal(
     val strDrink: String,
     val strDrinkThumb: String,
     val strInstructions: String?,
-    val strCategory: String?
+    val strCategory: String?,
+    val strVideo: String?
 )
 
 data class MealResponse(
